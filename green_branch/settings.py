@@ -143,24 +143,21 @@ BOOTSTRAP3 = {
 	}
 
 # Настройки Heroku
-	import dj_database_url
-	DATABASES = {
+import dj_database_url
+DATABASES = {
 	'default': dj_database_url.config(default='postgres://localhost')
-	}
-
-	# Поддержка заголовка 'X-Forwarded-Proto' для request.is_secure().
-	SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-	# Разрешены все заголовки хостов.
-	ALLOWED_HOSTS = ['*']
-
-	# Конфигурация статических ресурсов
-	#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-	#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-	#BASE_DIR = Path(__file__).resolve().parent.parent
-	BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-	STATIC_URL = '/static/'
-	STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-	)
+}
+# Поддержка заголовка 'X-Forwarded-Proto' для request.is_secure().
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Разрешены все заголовки хостов.
+ALLOWED_HOSTS = ['*']
+# Конфигурация статических ресурсов
+#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+#BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+	os.path.join(BASE_DIR, 'static'),
+)
